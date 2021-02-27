@@ -1,8 +1,17 @@
 {
-  "name": "typescript-react-portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.2.2",
+    "web-vitals": "^1.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,19 +19,11 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yhlee-dho/typescript-react-portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yhlee-dho/typescript-react-portfolio/issues"
-  },
-  "homepage": "https://github.com/yhlee-dho/typescript-react-portfolio#readme",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,10 +49,6 @@
     "@types/react-dom": "^17.0.1",
     "@types/react-router-dom": "^5.1.7",
     "node-sass": "^5.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
-    "typescript": "^4.2.2"
+    "react-router-dom": "^5.2.0"
   }
 }
