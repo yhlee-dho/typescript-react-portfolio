@@ -1,0 +1,144 @@
+.header {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 40px;
+    opacity: 1;
+    height: 75px;
+    width: 100%;
+    animation: fade 3s ease 0s none normal;
+}
+
+.header-logo {
+    margin-top: auto;
+    @include headerLogo();
+    text-decoration: none;
+    &--hidden {
+        visibility: hidden;
+    }
+}
+
+.header-menu {
+    margin-bottom: 13px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.nav {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $lightGrey;
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 1s, opacity 1s ease-in-out;
+
+    &-link {
+        position: relative;
+        @include nav-link();
+        text-decoration: none;
+        cursor: pointer;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        &--strike {
+            position: absolute;
+            height: 2px;
+            width: 0%;
+            left: -6%;
+            background-color: $grey;
+            margin-top: 26px;
+            border: none;
+            transition: width 1s ease;
+        }
+
+        &:hover {
+            color: $darkGrey;
+        }
+
+        &:hover  &--strike {
+            width: 112%;
+            transition: width 1s ease;
+        }
+    }
+
+    &--hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 1s, opacity 1s;
+    }
+}
+
+.icon {
+    font-size: 30px;
+    color: $black;
+    margin: 10px;
+
+    &-wrapper {
+        display: flex;
+        justify-self: end;
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+}
+
+.none {
+    display: none;
+}
+
+@media only screen and (max-width: 450px) {
+    .header {
+        padding: 0 20px;
+        height: 50px;
+    }
+
+    .icon {
+        font-size: 30px;
+        color: $black;
+        margin: 10px;
+    
+        &-wrapper {
+            display: flex;
+            justify-self: end;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+    }
+
+    .nav {
+        &-link {
+            font-size: 20px;
+            &--strike {
+                position: absolute;
+                height: 2px;
+                width: 0%;
+                left: -6%;
+                background-color: $grey;
+                margin-top: 18px;
+                border: none;
+                transition: width 1s ease;
+            }
+        }
+    }
+  }
+
+  @keyframes fade {
+    from {
+        opacity: 0;
+    }
+  
+    to {
+        opacity: 1;
+    }
+  }
